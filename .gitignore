@@ -42,3 +42,4 @@ dist/
 # 生成的Java解析文档
 java_docs*/
 invoice_java_docs*/
+demo_java_analysis*/
