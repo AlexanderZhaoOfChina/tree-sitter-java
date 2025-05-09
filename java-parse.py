@@ -79,7 +79,7 @@ def get_class_info(class_node, package_name, imports):
         # 提取方法
         for child in class_body.children:
             if child.type == "method_declaration":
-                method_info = extract_method_info(child)
+                method_info = extract_method_info(child, imports, package_name)
                 if method_info:
                     class_info['methods'].append(method_info)
             
@@ -90,14 +90,15 @@ def get_class_info(class_node, package_name, imports):
     
     return class_info
 
-def extract_method_info(method_node):
-    """提取方法信息"""
+def extract_method_info(method_node, imports, package_name):
+    """提取方法信息及其内部局部变量"""
     method_info = {
         'name': '',
-        'return_type': ''
+        'return_type': '',
+        'local_variables': []
     }
     
-    # 提取方法名
+    # 提取方法名和返回类型
     for child in method_node.children:
         if child.type == "identifier":
             method_info['name'] = child.text.decode('utf-8')
@@ -105,8 +106,57 @@ def extract_method_info(method_node):
             method_info['return_type'] = child.text.decode('utf-8')
         elif child.type == "void_type":
             method_info['return_type'] = "void"
+        
+        # 提取方法体
+        elif child.type == "block":
+            # 遍历方法体寻找局部变量声明
+            extract_local_variables(child, method_info['local_variables'], imports, package_name)
     
     return method_info
+
+def extract_local_variables(block_node, local_vars, imports, package_name):
+    """从方法体中提取局部变量"""
+    
+    def traverse_node(node):
+        if node.type == "local_variable_declaration":
+            # 提取局部变量类型
+            type_node = None
+            var_type = ""
+            var_type_full_path = ""
+            
+            for child in node.children:
+                if child.type == "type_identifier":
+                    type_node = child
+                    var_type = child.text.decode('utf-8')
+                    
+                    # 尝试解析全路径
+                    if var_type in imports:
+                        var_type_full_path = imports[var_type]
+                    else:
+                        # 假设与当前类在同一包下
+                        var_type_full_path = f"{package_name}.{var_type}" if package_name else var_type
+                        
+                elif child.type == "primitive_type":
+                    type_node = child
+                    var_type = child.text.decode('utf-8')
+                    var_type_full_path = var_type
+                
+                # 提取变量名
+                elif child.type == "variable_declarator":
+                    for grandchild in child.children:
+                        if grandchild.type == "identifier":
+                            var_name = grandchild.text.decode('utf-8')
+                            local_vars.append({
+                                'name': var_name,
+                                'type': var_type,
+                                'type_full_path': var_type_full_path
+                            })
+        
+        # 递归遍历子节点
+        for child in node.children:
+            traverse_node(child)
+    
+    traverse_node(block_node)
 
 def extract_field_info(field_node, imports, package_name):
     """提取字段/变量信息"""
@@ -184,15 +234,15 @@ def generate_markdown(classes, output_file):
     """生成Markdown输出"""
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write("# Java项目结构分析\n\n")
-        f.write("| 类 | 方法 | 变量名 | 变量类型 |\n")
-        f.write("|---|------|-------|--------|\n")
+        f.write("| 类 | 方法 | 变量名 | 变量类型 | 变量位置 |\n")
+        f.write("|---|------|-------|--------|--------|\n")
         
         for class_info in classes:
             class_name = class_info['full_path']
             
             # 如果类没有方法和字段，添加一个空行
             if not class_info['methods'] and not class_info['fields']:
-                f.write(f"| {class_name} | | | |\n")
+                f.write(f"| {class_name} | | | | |\n")
                 continue
             
             # 处理每个方法
@@ -202,9 +252,15 @@ def generate_markdown(classes, output_file):
                 
                 # 第一个方法显示类名，其余方法不显示
                 if i == 0:
-                    f.write(f"| {class_name} | {method_name} | | |\n")
+                    f.write(f"| {class_name} | {method_name} | | | |\n")
                 else:
-                    f.write(f"| | {method_name} | | |\n")
+                    f.write(f"| | {method_name} | | | |\n")
+                
+                # 处理方法内部的局部变量
+                for var in method['local_variables']:
+                    var_name = var['name']
+                    var_type = var['type_full_path']
+                    f.write(f"| | | {var_name} | {var_type} | 局部变量 |\n")
             
             # 处理每个字段
             for i, field in enumerate(class_info['fields']):
@@ -213,9 +269,9 @@ def generate_markdown(classes, output_file):
                 
                 # 如果没有方法但有字段，第一个字段显示类名
                 if not class_info['methods'] and i == 0:
-                    f.write(f"| {class_name} | | {field_name} | {field_type} |\n")
+                    f.write(f"| {class_name} | | {field_name} | {field_type} | 类字段 |\n")
                 else:
-                    f.write(f"| | | {field_name} | {field_type} |\n")
+                    f.write(f"| | | {field_name} | {field_type} | 类字段 |\n")
 
 def main():
     if len(sys.argv) < 2:
