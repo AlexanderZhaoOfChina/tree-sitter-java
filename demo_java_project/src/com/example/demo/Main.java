@@ -44,7 +44,7 @@ public class Main {
         System.out.println("\n--- 抽象类演示 ---");
         
         // 创建TextDataProcessor实例（继承自AbstractProcessor）
-        TextDataProcessor textProcessor = new TextDataProcessor();
+        AbstractProcessor<String, Map<String, Integer>> textProcessor = new TextDataProcessor();
         textProcessor.setActive(true);
         textProcessor.setMinWordLength(3);
         textProcessor.setCaseSensitive(false);
@@ -77,7 +77,7 @@ public class Main {
         System.out.println("\n--- 接口和实现类演示 ---");
         
         // 创建JsonDataProcessor实例（实现DataProcessor接口）
-        JsonDataProcessor jsonProcessor = new JsonDataProcessor();
+        DataProcessor<String, Map<String, Object>> jsonProcessor = new JsonDataProcessor();
         
         // 初始化处理器
         jsonProcessor.initialize("validate=true,maxBatchSize=50,encoding=UTF-8");
