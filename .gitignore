@@ -38,3 +38,6 @@ dist/
 *.tar.gz
 *.tgz
 *.zip
+
+# 生成的Java解析文档
+java_docs*/
