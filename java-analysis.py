@@ -1,5 +1,6 @@
 import os
 import sys
+import time  # 添加time模块用于计时
 from tree_sitter import Language, Parser
 import re
 from pathlib import Path
@@ -271,6 +272,9 @@ def process_java_file(file_path, parser):
     with open(file_path, 'rb') as f:
         source_code = f.read()
     
+    # 计算文件行数
+    line_count = len(source_code.splitlines())
+    
     tree = parser.parse(source_code)
     root_node = tree.root_node
     
@@ -285,23 +289,29 @@ def process_java_file(file_path, parser):
             class_info = get_class_info(node, package_name, imports, file_path)
             classes.append(class_info)
     
-    return classes
+    return classes, line_count
 
 def process_directory(directory_path, parser):
     """递归处理目录中的所有Java文件"""
     all_classes = []
+    total_lines = 0
+    total_files = 0
     
     for root, _, files in os.walk(directory_path):
         for file in files:
             if file.endswith('.java'):
                 file_path = os.path.join(root, file)
                 try:
-                    classes = process_java_file(file_path, parser)
+                    classes, line_count = process_java_file(file_path, parser)
                     all_classes.extend(classes)
+                    total_lines += line_count
+                    total_files += 1
+                    if total_files % 100 == 0:
+                        print(f"已处理 {total_files} 个文件, {total_lines} 行代码...")
                 except Exception as e:
                     print(f"处理文件 {file_path} 时出错: {e}")
     
-    return all_classes
+    return all_classes, total_lines, total_files
 
 def generate_markdown_header():
     """生成Markdown文件的头部内容"""
@@ -399,18 +409,48 @@ def main():
     java_path = sys.argv[1]
     output_dir = sys.argv[2] if len(sys.argv) > 2 else "java_structure_docs"
     
+    # 记录开始时间
+    start_time = time.time()
+    print(f"开始分析Java项目: {java_path}")
+    
     parser = setup_tree_sitter()
     
+    total_lines = 0
+    total_files = 0
+    
     if os.path.isfile(java_path) and java_path.endswith('.java'):
-        classes = process_java_file(java_path, parser)
+        classes, line_count = process_java_file(java_path, parser)
+        total_lines = line_count
+        total_files = 1
     elif os.path.isdir(java_path):
-        classes = process_directory(java_path, parser)
+        classes, total_lines, total_files = process_directory(java_path, parser)
     else:
         print(f"错误: 文件路径 {java_path} 不是有效的Java文件或目录")
         sys.exit(1)
     
+    # 生成Markdown文件
     file_count = generate_markdown_files(classes, output_dir)
+    
+    # 计算总耗时
+    end_time = time.time()
+    execution_time = end_time - start_time
+    
+    # 打印统计信息
     print(f"分析完成! 结果已保存到 {output_dir} 目录中的 {file_count} 个文件")
+    print(f"总计扫描了 {total_files} 个Java文件, {total_lines} 行代码")
+    print(f"总耗时: {execution_time:.2f} 秒")
+    
+    # 将统计信息也写入到summary.txt文件中
+    summary_path = os.path.join(output_dir, "summary.txt")
+    with open(summary_path, 'w', encoding='utf-8') as f:
+        f.write(f"Java项目分析统计信息\n")
+        f.write(f"====================\n\n")
+        f.write(f"分析的项目路径: {os.path.abspath(java_path)}\n")
+        f.write(f"总计扫描文件数: {total_files} 个Java文件\n")
+        f.write(f"总计代码行数: {total_lines} 行\n")
+        f.write(f"总计耗时: {execution_time:.2f} 秒\n")
+        f.write(f"生成的Markdown文件数: {file_count} 个\n")
+        f.write(f"\n分析时间: {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
 
 if __name__ == "__main__":
     main()
