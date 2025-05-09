@@ -239,23 +239,43 @@ def process_directory(directory_path, parser):
     
     return all_classes
 
-def generate_markdown(classes, output_file):
-    """生成Markdown输出"""
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write("# Java项目结构分析\n\n")
-        f.write("| 类 | 方法 | 变量名 | 变量类型 | 变量位置 | 源文件位置 |\n")
-        f.write("|---|------|-------|--------|--------|----------|\n")
+def generate_markdown_header():
+    """生成Markdown文件的头部内容"""
+    return "# Java项目结构分析\n\n" + \
+           "| 类 | 方法 | 变量名 | 变量类型 | 变量位置 | 源文件位置 |\n" + \
+           "|---|------|-------|--------|--------|----------|\n"
+
+def generate_markdown_files(classes, output_dir):
+    """生成多个Markdown文件，每个不超过2MB"""
+    # 创建输出目录
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
+    # 定义每个文件的最大大小为2MB
+    MAX_FILE_SIZE = 2 * 1024 * 1024  # 2MB
+    
+    file_index = 1
+    current_file_path = os.path.join(output_dir, f"java_structure_{file_index}.md")
+    
+    # 创建并写入第一个文件的头部
+    with open(current_file_path, 'w', encoding='utf-8') as f:
+        f.write(generate_markdown_header())
+    
+    current_file_size = len(generate_markdown_header().encode('utf-8'))
+    
+    # 处理所有类
+    for class_info in classes:
+        class_name = class_info['full_path']
+        class_file = class_info['file_path']
+        class_line = class_info['line']
         
-        for class_info in classes:
-            class_name = class_info['full_path']
-            class_file = class_info['file_path']
-            class_line = class_info['line']
-            
-            # 如果类没有方法和字段，添加一个空行
-            if not class_info['methods'] and not class_info['fields']:
-                f.write(f"| {class_name} | | | | | {class_file}:{class_line} |\n")
-                continue
-            
+        # 为当前类生成内容
+        class_content = ""
+        
+        # 如果类没有方法和字段，添加一个空行
+        if not class_info['methods'] and not class_info['fields']:
+            class_content += f"| {class_name} | | | | | {class_file}:{class_line} |\n"
+        else:
             # 处理每个方法
             for i, method in enumerate(class_info['methods']):
                 method_name = method['name']
@@ -263,16 +283,16 @@ def generate_markdown(classes, output_file):
                 
                 # 第一个方法显示类名，其余方法不显示
                 if i == 0:
-                    f.write(f"| {class_name} | {method_name} | | | | {class_file}:{class_line} / 方法:{method_line} |\n")
+                    class_content += f"| {class_name} | {method_name} | | | | {class_file}:{class_line} / 方法:{method_line} |\n"
                 else:
-                    f.write(f"| | {method_name} | | | | {class_file}:方法:{method_line} |\n")
+                    class_content += f"| | {method_name} | | | | {class_file}:方法:{method_line} |\n"
                 
                 # 处理方法内部的局部变量
                 for var in method['local_variables']:
                     var_name = var['name']
                     var_type = var['type_full_path']
                     var_line = var.get('line', '')
-                    f.write(f"| | | {var_name} | {var_type} | 局部变量 | 行:{var_line} |\n")
+                    class_content += f"| | | {var_name} | {var_type} | 局部变量 | 行:{var_line} |\n"
             
             # 处理每个字段
             for i, field in enumerate(class_info['fields']):
@@ -282,17 +302,38 @@ def generate_markdown(classes, output_file):
                 
                 # 如果没有方法但有字段，第一个字段显示类名
                 if not class_info['methods'] and i == 0:
-                    f.write(f"| {class_name} | | {field_name} | {field_type} | 类字段 | {class_file}:{class_line} / 字段:{field_line} |\n")
+                    class_content += f"| {class_name} | | {field_name} | {field_type} | 类字段 | {class_file}:{class_line} / 字段:{field_line} |\n"
                 else:
-                    f.write(f"| | | {field_name} | {field_type} | 类字段 | 行:{field_line} |\n")
+                    class_content += f"| | | {field_name} | {field_type} | 类字段 | 行:{field_line} |\n"
+        
+        # 检查添加这个类的内容是否会使当前文件超过大小限制
+        content_size = len(class_content.encode('utf-8'))
+        
+        if current_file_size + content_size > MAX_FILE_SIZE:
+            # 如果会超过，创建新文件
+            file_index += 1
+            current_file_path = os.path.join(output_dir, f"java_structure_{file_index}.md")
+            
+            with open(current_file_path, 'w', encoding='utf-8') as f:
+                f.write(generate_markdown_header())
+            
+            current_file_size = len(generate_markdown_header().encode('utf-8'))
+        
+        # 将类内容添加到当前文件
+        with open(current_file_path, 'a', encoding='utf-8') as f:
+            f.write(class_content)
+        
+        current_file_size += content_size
+    
+    return file_index  # 返回生成的文件数量
 
 def main():
     if len(sys.argv) < 2:
-        print("用法: python java_parser.py <Java项目路径> [输出文件]")
+        print("用法: python java_parser.py <Java项目路径> [输出目录]")
         sys.exit(1)
     
     java_path = sys.argv[1]
-    output_file = sys.argv[2] if len(sys.argv) > 2 else "java_structure.md"
+    output_dir = sys.argv[2] if len(sys.argv) > 2 else "java_structure_docs"
     
     parser = setup_tree_sitter()
     
@@ -304,8 +345,8 @@ def main():
         print(f"错误: 文件路径 {java_path} 不是有效的Java文件或目录")
         sys.exit(1)
     
-    generate_markdown(classes, output_file)
-    print(f"分析完成! 结果已保存到 {output_file}")
+    file_count = generate_markdown_files(classes, output_dir)
+    print(f"分析完成! 结果已保存到 {output_dir} 目录中的 {file_count} 个文件")
 
 if __name__ == "__main__":
     main()
