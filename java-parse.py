@@ -52,13 +52,19 @@ def get_imports(root_node):
     
     return imports
 
-def get_class_info(class_node, package_name, imports):
+def get_line_number(node):
+    """获取节点的起始行号"""
+    return node.start_point[0] + 1  # 行号从0开始，转为1开始
+
+def get_class_info(class_node, package_name, imports, file_path):
     """提取类信息及其方法和变量"""
     class_info = {
         'name': '',
         'full_path': '',
         'methods': [],
-        'fields': []
+        'fields': [],
+        'line': get_line_number(class_node),
+        'file_path': file_path
     }
     
     # 提取类名
@@ -95,7 +101,8 @@ def extract_method_info(method_node, imports, package_name):
     method_info = {
         'name': '',
         'return_type': '',
-        'local_variables': []
+        'local_variables': [],
+        'line': get_line_number(method_node)
     }
     
     # 提取方法名和返回类型
@@ -149,7 +156,8 @@ def extract_local_variables(block_node, local_vars, imports, package_name):
                             local_vars.append({
                                 'name': var_name,
                                 'type': var_type,
-                                'type_full_path': var_type_full_path
+                                'type_full_path': var_type_full_path,
+                                'line': get_line_number(child)  # 记录变量声明的行号
                             })
         
         # 递归遍历子节点
@@ -188,7 +196,8 @@ def extract_field_info(field_node, imports, package_name):
                     field_infos.append({
                         'name': field_name,
                         'type': field_type,
-                        'type_full_path': field_type_full_path
+                        'type_full_path': field_type_full_path,
+                        'line': get_line_number(child)  # 记录字段声明的行号
                     })
     
     return field_infos
@@ -209,7 +218,7 @@ def process_java_file(file_path, parser):
     # 提取所有类声明
     for node in root_node.children:
         if node.type == "class_declaration":
-            class_info = get_class_info(node, package_name, imports)
+            class_info = get_class_info(node, package_name, imports, file_path)
             classes.append(class_info)
     
     return classes
@@ -234,44 +243,48 @@ def generate_markdown(classes, output_file):
     """生成Markdown输出"""
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write("# Java项目结构分析\n\n")
-        f.write("| 类 | 方法 | 变量名 | 变量类型 | 变量位置 |\n")
-        f.write("|---|------|-------|--------|--------|\n")
+        f.write("| 类 | 方法 | 变量名 | 变量类型 | 变量位置 | 源文件位置 |\n")
+        f.write("|---|------|-------|--------|--------|----------|\n")
         
         for class_info in classes:
             class_name = class_info['full_path']
+            class_file = class_info['file_path']
+            class_line = class_info['line']
             
             # 如果类没有方法和字段，添加一个空行
             if not class_info['methods'] and not class_info['fields']:
-                f.write(f"| {class_name} | | | | |\n")
+                f.write(f"| {class_name} | | | | | {class_file}:{class_line} |\n")
                 continue
             
             # 处理每个方法
             for i, method in enumerate(class_info['methods']):
                 method_name = method['name']
-                method_return = method['return_type']
+                method_line = method['line']
                 
                 # 第一个方法显示类名，其余方法不显示
                 if i == 0:
-                    f.write(f"| {class_name} | {method_name} | | | |\n")
+                    f.write(f"| {class_name} | {method_name} | | | | {class_file}:{class_line} / 方法:{method_line} |\n")
                 else:
-                    f.write(f"| | {method_name} | | | |\n")
+                    f.write(f"| | {method_name} | | | | {class_file}:方法:{method_line} |\n")
                 
                 # 处理方法内部的局部变量
                 for var in method['local_variables']:
                     var_name = var['name']
                     var_type = var['type_full_path']
-                    f.write(f"| | | {var_name} | {var_type} | 局部变量 |\n")
+                    var_line = var.get('line', '')
+                    f.write(f"| | | {var_name} | {var_type} | 局部变量 | 行:{var_line} |\n")
             
             # 处理每个字段
             for i, field in enumerate(class_info['fields']):
                 field_name = field['name']
                 field_type = field['type_full_path']
+                field_line = field.get('line', '')
                 
                 # 如果没有方法但有字段，第一个字段显示类名
                 if not class_info['methods'] and i == 0:
-                    f.write(f"| {class_name} | | {field_name} | {field_type} | 类字段 |\n")
+                    f.write(f"| {class_name} | | {field_name} | {field_type} | 类字段 | {class_file}:{class_line} / 字段:{field_line} |\n")
                 else:
-                    f.write(f"| | | {field_name} | {field_type} | 类字段 |\n")
+                    f.write(f"| | | {field_name} | {field_type} | 类字段 | 行:{field_line} |\n")
 
 def main():
     if len(sys.argv) < 2:
