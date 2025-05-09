@@ -121,44 +121,109 @@ def extract_method_info(method_node, imports, package_name):
     
     return method_info
 
+def extract_type_full_info(node, imports, package_name):
+    """提取类型的完整信息，包括集合类型和数组类型"""
+    # 处理基本类型和普通类型
+    if node.type == "primitive_type":
+        return node.text.decode('utf-8'), node.text.decode('utf-8')
+    elif node.type == "type_identifier":
+        var_type = node.text.decode('utf-8')
+        # 尝试解析全路径
+        if var_type in imports:
+            var_type_full_path = imports[var_type]
+        else:
+            # 假设与当前类在同一包下
+            var_type_full_path = f"{package_name}.{var_type}" if package_name else var_type
+        return var_type, var_type_full_path
+    # 处理泛型类型
+    elif node.type == "generic_type":
+        base_type = None
+        type_args = []
+        
+        for child in node.children:
+            if child.type == "type_identifier":
+                base_type = child.text.decode('utf-8')
+            elif child.type in ["type_arguments", "type_argument"]:
+                for arg_child in child.children:
+                    if arg_child.type in ["type_identifier", "primitive_type"]:
+                        type_args.append(arg_child.text.decode('utf-8'))
+        
+        if base_type and type_args:
+            var_type = f"{base_type}<{', '.join(type_args)}>"
+            # 尝试解析全路径
+            if base_type in imports:
+                base_type_full_path = imports[base_type]
+                var_type_full_path = f"{base_type_full_path}<{', '.join(type_args)}>"
+            else:
+                # 假设与当前类在同一包下
+                base_type_full_path = f"{package_name}.{base_type}" if package_name else base_type
+                var_type_full_path = f"{base_type_full_path}<{', '.join(type_args)}>"
+            return var_type, var_type_full_path
+    # 处理数组类型
+    elif node.type == "array_type":
+        element_type = None
+        for child in node.children:
+            if child.type in ["type_identifier", "primitive_type"]:
+                element_type_name, element_type_full_path = extract_type_full_info(child, imports, package_name)
+                var_type = f"{element_type_name}[]"
+                var_type_full_path = f"{element_type_full_path}[]"
+                return var_type, var_type_full_path
+    
+    # 如果无法识别类型，返回空字符串
+    return "", ""
+
+def guess_type_from_name(var_name):
+    """根据变量名猜测可能的类型"""
+    # 常见的命名模式与对应的类型
+    if var_name in ['i', 'j', 'k', 'n', 'index', 'count', 'size', 'length']:
+        return 'int', 'int'
+    elif 'time' in var_name.lower() and ('start' in var_name.lower() or 'end' in var_name.lower() or 'stamp' in var_name.lower()):
+        return 'long', 'long'
+    elif var_name.lower() in ['found', 'has', 'is', 'exists', 'contains']:
+        return 'boolean', 'boolean'
+    elif var_name == 'rowNum' or var_name.endswith('Num') or var_name.endswith('Count') or var_name.startswith('num'):
+        return 'int', 'int'
+    
+    # 变量类型猜测：根据后缀约定
+    if var_name.endswith('Id') or var_name.endswith('ID'):
+        return 'Long', 'Long'
+    
+    # 对于无法猜测的变量，返回空字符串
+    return '', ''
+
 def extract_local_variables(block_node, local_vars, imports, package_name):
     """从方法体中提取局部变量"""
     
     def traverse_node(node):
         if node.type == "local_variable_declaration":
-            # 提取局部变量类型
-            type_node = None
             var_type = ""
             var_type_full_path = ""
+            var_declarations = []
             
+            # 查找类型声明和变量声明
             for child in node.children:
-                if child.type == "type_identifier":
-                    type_node = child
-                    var_type = child.text.decode('utf-8')
-                    
-                    # 尝试解析全路径
-                    if var_type in imports:
-                        var_type_full_path = imports[var_type]
-                    else:
-                        # 假设与当前类在同一包下
-                        var_type_full_path = f"{package_name}.{var_type}" if package_name else var_type
-                        
-                elif child.type == "primitive_type":
-                    type_node = child
-                    var_type = child.text.decode('utf-8')
-                    var_type_full_path = var_type
-                
-                # 提取变量名
+                # 处理基本类型和普通类型
+                if child.type in ["primitive_type", "type_identifier", "generic_type", "array_type"]:
+                    var_type, var_type_full_path = extract_type_full_info(child, imports, package_name)
+                # 处理变量声明
                 elif child.type == "variable_declarator":
                     for grandchild in child.children:
                         if grandchild.type == "identifier":
                             var_name = grandchild.text.decode('utf-8')
-                            local_vars.append({
+                            
+                            # 如果无法从声明中获取类型，尝试根据变量名猜测
+                            if not var_type:
+                                var_type, var_type_full_path = guess_type_from_name(var_name)
+                            
+                            var_declarations.append({
                                 'name': var_name,
                                 'type': var_type,
                                 'type_full_path': var_type_full_path,
                                 'line': get_line_number(child)  # 记录变量声明的行号
                             })
+            
+            # 添加所有变量声明到列表
+            local_vars.extend(var_declarations)
         
         # 递归遍历子节点
         for child in node.children:
@@ -170,35 +235,34 @@ def extract_field_info(field_node, imports, package_name):
     """提取字段/变量信息"""
     field_infos = []
     
-    # 提取字段类型
-    field_type = ""
-    field_type_full_path = ""
-    
+    # 查找类型声明
+    type_node = None
     for child in field_node.children:
-        if child.type == "type_identifier":
-            field_type = child.text.decode('utf-8')
-            # 尝试解析全路径
-            if field_type in imports:
-                field_type_full_path = imports[field_type]
-            else:
-                # 假设与当前类在同一包下
-                field_type_full_path = f"{package_name}.{field_type}" if package_name else field_type
+        if child.type in ["primitive_type", "type_identifier", "generic_type", "array_type"]:
+            type_node = child
+            break
+    
+    # 如果找到类型节点，提取类型信息
+    if type_node:
+        var_type, var_type_full_path = extract_type_full_info(type_node, imports, package_name)
         
-        elif child.type == "primitive_type":
-            field_type = child.text.decode('utf-8')  # 原始类型不需要全路径
-            field_type_full_path = field_type
-        
-        # 提取字段名
-        elif child.type == "variable_declarator":
-            for grandchild in child.children:
-                if grandchild.type == "identifier":
-                    field_name = grandchild.text.decode('utf-8')
-                    field_infos.append({
-                        'name': field_name,
-                        'type': field_type,
-                        'type_full_path': field_type_full_path,
-                        'line': get_line_number(child)  # 记录字段声明的行号
-                    })
+        # 查找所有变量声明
+        for child in field_node.children:
+            if child.type == "variable_declarator":
+                for grandchild in child.children:
+                    if grandchild.type == "identifier":
+                        field_name = grandchild.text.decode('utf-8')
+                        
+                        # 如果无法从声明中获取类型，尝试根据变量名猜测
+                        if not var_type:
+                            var_type, var_type_full_path = guess_type_from_name(field_name)
+                            
+                        field_infos.append({
+                            'name': field_name,
+                            'type': var_type,
+                            'type_full_path': var_type_full_path,
+                            'line': get_line_number(child)  # 记录字段声明的行号
+                        })
     
     return field_infos
 
