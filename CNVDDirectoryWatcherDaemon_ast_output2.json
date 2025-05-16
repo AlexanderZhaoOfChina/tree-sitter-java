@@ -1,0 +1,3153 @@
+{
+  "type": "program",
+  "children": [
+    {
+      "type": "package_declaration",
+      "children": [
+        {
+          "type": "package"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com"
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "asiainfo"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "cvd"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "daemon"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "com"
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "asiainfo"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "cvd"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "model"
+            }
+          ]
+        },
+        {
+          "type": "."
+        },
+        {
+          "type": "asterisk",
+          "children": [
+            {
+              "type": "*"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com"
+                        },
+                        {
+                          "type": "."
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "fasterxml"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jackson"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "databind"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "ObjectMapper"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com"
+                        },
+                        {
+                          "type": "."
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "fasterxml"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "jackson"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "databind"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "SerializationFeature"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org"
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "w3c"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "dom"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "Document"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org"
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "w3c"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "dom"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "Element"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "org"
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "w3c"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "dom"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "NodeList"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "javax"
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "xml"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "parsers"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "DocumentBuilder"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "text": "javax"
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "xml"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "parsers"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "DocumentBuilderFactory"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "identifier",
+              "text": "java"
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "io"
+            }
+          ]
+        },
+        {
+          "type": "."
+        },
+        {
+          "type": "asterisk",
+          "children": [
+            {
+              "type": "*"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "java"
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "nio"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "file"
+            }
+          ]
+        },
+        {
+          "type": "."
+        },
+        {
+          "type": "asterisk",
+          "children": [
+            {
+              "type": "*"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "identifier",
+              "text": "java"
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "util"
+            }
+          ]
+        },
+        {
+          "type": "."
+        },
+        {
+          "type": "asterisk",
+          "children": [
+            {
+              "type": "*"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "static"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com"
+                        },
+                        {
+                          "type": "."
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "asiainfo"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "utils"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "XMLFilesUtils"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "collectXMLFiles"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "static"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com"
+                        },
+                        {
+                          "type": "."
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "asiainfo"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "utils"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "XMLFilesUtils"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "getStringFromXmlElement"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "org"
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "slf4j"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "Logger"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "identifier",
+                  "text": "org"
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "slf4j"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "LoggerFactory"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com"
+                        },
+                        {
+                          "type": "."
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "asiainfo"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "cvd"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "service"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "ComponentService"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "import_declaration",
+      "children": [
+        {
+          "type": "import"
+        },
+        {
+          "type": "scoped_identifier",
+          "children": [
+            {
+              "type": "scoped_identifier",
+              "children": [
+                {
+                  "type": "scoped_identifier",
+                  "children": [
+                    {
+                      "type": "scoped_identifier",
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "text": "com"
+                        },
+                        {
+                          "type": "."
+                        },
+                        {
+                          "type": "identifier",
+                          "text": "asiainfo"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "."
+                    },
+                    {
+                      "type": "identifier",
+                      "text": "cvd"
+                    }
+                  ]
+                },
+                {
+                  "type": "."
+                },
+                {
+                  "type": "identifier",
+                  "text": "service"
+                }
+              ]
+            },
+            {
+              "type": "."
+            },
+            {
+              "type": "identifier",
+              "text": "VulnerabilityService"
+            }
+          ]
+        },
+        {
+          "type": ";"
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "name": "CNVDDirectoryWatcherDaemon",
+      "members": {
+        "fields": [
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "type_identifier"
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "logger"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "LoggerFactory"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "getLogger"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(CNVDDirectoryWatcherDaemon.class)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          },
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "type_identifier"
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "BASE_DIR"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "System"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "getProperty"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(\"user.dir\")"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          },
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "type_identifier"
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "DIRECTORY_PATH"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "Paths"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "get"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "(BASE_DIR, \"cnvd\")"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "toString"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "()"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          },
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "type_identifier"
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "DATA_STORE_PATH"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "Paths"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "get"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "(BASE_DIR, \"data_store\")"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "toString"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "()"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          },
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "type_identifier"
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "PROCESS_STATUS_FILE"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "Paths"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "get"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "(BASE_DIR, \"process_status.json\")"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "toString"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "()"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          },
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "type_identifier"
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "objectMapper"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "object_creation_expression",
+                        "children": [
+                          {
+                            "type": "new"
+                          },
+                          {
+                            "type": "type_identifier"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "enable"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(SerializationFeature.INDENT_OUTPUT)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          },
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "integral_type",
+                "children": [
+                  {
+                    "type": "long"
+                  }
+                ]
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "SCAN_INTERVAL"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "decimal_integer_literal"
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          },
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "type_identifier"
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "componentService"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "object_creation_expression",
+                    "children": [
+                      {
+                        "type": "new"
+                      },
+                      {
+                        "type": "type_identifier"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "()"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          },
+          {
+            "type": "field_declaration",
+            "children": [
+              {
+                "type": "modifiers",
+                "text": "private static final"
+              },
+              {
+                "type": "type_identifier"
+              },
+              {
+                "type": "variable_declarator",
+                "children": [
+                  {
+                    "type": "identifier",
+                    "text": "vulnerabilityService"
+                  },
+                  {
+                    "type": "="
+                  },
+                  {
+                    "type": "object_creation_expression",
+                    "children": [
+                      {
+                        "type": "new"
+                      },
+                      {
+                        "type": "type_identifier"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(DATA_STORE_PATH)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": ";"
+              }
+            ]
+          }
+        ],
+        "methods": [
+          {
+            "type": "method_declaration",
+            "name": "main",
+            "parameters": [
+              {
+                "name": "args"
+              }
+            ],
+            "body": [
+              {
+                "type": "{"
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "createDirectory"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(DIRECTORY_PATH)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "createDirectory"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(DATA_STORE_PATH)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "createDirectory"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(Paths.get(BASE_DIR, \"config\").toString())"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "logger"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "info"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(\"Base Directory: {}\", BASE_DIR)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "logger"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "info"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(\"CNVD XML Directory: {}\", DIRECTORY_PATH)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "logger"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "info"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(\"Data Directory: {}\", DATA_STORE_PATH)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "logger"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "info"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(\"Config Directory: {}\", Paths.get(BASE_DIR, \"config\").toString())"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "task"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "object_creation_expression",
+                        "children": [
+                          {
+                            "type": "new"
+                          },
+                          {
+                            "type": "type_identifier"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          },
+                          {
+                            "type": "class_body",
+                            "children": [
+                              {
+                                "type": "{"
+                              },
+                              {
+                                "type": "method_declaration",
+                                "name": "run",
+                                "body": [
+                                  {
+                                    "type": "{"
+                                  },
+                                  {
+                                    "type": "expression_statement"
+                                  },
+                                  {
+                                    "type": "try_statement"
+                                  },
+                                  {
+                                    "type": "}"
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "}"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "timer"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "object_creation_expression",
+                        "children": [
+                          {
+                            "type": "new"
+                          },
+                          {
+                            "type": "type_identifier"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "(true)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "timer"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "scheduleAtFixedRate"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(task, 0, SCAN_INTERVAL)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "logger"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "info"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(\"Directory watcher started. Press Ctrl+C to exit.\")"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "try_statement",
+                "children": [
+                  {
+                    "type": "try"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            Thread.currentThread().join();\n        }"
+                  },
+                  {
+                    "type": "catch_clause",
+                    "children": [
+                      {
+                        "type": "catch"
+                      },
+                      {
+                        "type": "("
+                      },
+                      {
+                        "type": "catch_formal_parameter",
+                        "children": [
+                          {
+                            "type": "catch_type",
+                            "children": [
+                              {
+                                "type": "type_identifier"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "e"
+                          }
+                        ]
+                      },
+                      {
+                        "type": ")"
+                      },
+                      {
+                        "type": "block",
+                        "text": "{\n            logger.error(\"Thread interrupted\", e);\n        }"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "}"
+              }
+            ]
+          },
+          {
+            "type": "method_declaration",
+            "name": "isFileProcessed",
+            "parameters": [
+              {
+                "type": "String",
+                "name": "fileName"
+              }
+            ],
+            "body": [
+              {
+                "type": "{"
+              },
+              {
+                "type": "try_statement",
+                "children": [
+                  {
+                    "type": "try"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            File statusFile = new File(PROCESS_STATUS_FILE);\n            if (!statusFile.exists()) {\n                return false;\n            }\n            Map<String, String> processStatus = objectMapper.readValue(statusFile,\n                    objectMapper.getTypeFactory().constructMapType(Map.class, String.class, String.class));\n            return processStatus.containsKey(fileName) && \"PROCESSED\".equals(processStatus.get(fileName));\n        }"
+                  },
+                  {
+                    "type": "catch_clause",
+                    "children": [
+                      {
+                        "type": "catch"
+                      },
+                      {
+                        "type": "("
+                      },
+                      {
+                        "type": "catch_formal_parameter",
+                        "children": [
+                          {
+                            "type": "catch_type",
+                            "children": [
+                              {
+                                "type": "type_identifier"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "e"
+                          }
+                        ]
+                      },
+                      {
+                        "type": ")"
+                      },
+                      {
+                        "type": "block",
+                        "text": "{\n            return false;\n        }"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "}"
+              }
+            ]
+          },
+          {
+            "type": "method_declaration",
+            "name": "markFileStatus",
+            "parameters": [
+              {
+                "type": "String",
+                "name": "fileName"
+              },
+              {
+                "type": "String",
+                "name": "status"
+              }
+            ],
+            "body": [
+              {
+                "type": "{"
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "statusFile"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "object_creation_expression",
+                        "children": [
+                          {
+                            "type": "new"
+                          },
+                          {
+                            "type": "type_identifier"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "(PROCESS_STATUS_FILE)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "generic_type",
+                    "children": [
+                      {
+                        "type": "type_identifier"
+                      },
+                      {
+                        "type": "type_arguments",
+                        "text": "<String, String>"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "processStatus"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "if_statement",
+                "children": [
+                  {
+                    "type": "if"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            processStatus = objectMapper.readValue(statusFile,\n                    objectMapper.getTypeFactory().constructMapType(Map.class, String.class, String.class));\n        }"
+                  },
+                  {
+                    "type": "else"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            processStatus = new HashMap<>();\n        }"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "processStatus"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "put"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(fileName, status)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "objectMapper"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "writeValue"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(statusFile, processStatus)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "}"
+              }
+            ]
+          },
+          {
+            "type": "method_declaration",
+            "name": "scanDirectory",
+            "body": [
+              {
+                "type": "{"
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "directory"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "object_creation_expression",
+                        "children": [
+                          {
+                            "type": "new"
+                          },
+                          {
+                            "type": "type_identifier"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "(DIRECTORY_PATH)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "generic_type",
+                    "children": [
+                      {
+                        "type": "type_identifier"
+                      },
+                      {
+                        "type": "type_arguments",
+                        "text": "<File>"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "xmlFiles"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "object_creation_expression",
+                        "children": [
+                          {
+                            "type": "new"
+                          },
+                          {
+                            "type": "generic_type",
+                            "children": [
+                              {
+                                "type": "type_identifier"
+                              },
+                              {
+                                "type": "type_arguments",
+                                "text": "<>"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "if_statement",
+                "children": [
+                  {
+                    "type": "if"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            collectXMLFiles(directory, xmlFiles);\n            for (File xmlFile : xmlFiles) {\n                logger.info(\"Start Process XML file: {} ...\", xmlFile.getName());\n                long startTime = System.currentTimeMillis();\n                processXmlFile(xmlFile);\n                logger.info(\"Process XML file successfully: {}, execution time: {}\", xmlFile.getName(), String.format(\"%.2f seconds\", (System.currentTimeMillis() - startTime) / 1000.0));\n            }\n        }"
+                  }
+                ]
+              },
+              {
+                "type": "}"
+              }
+            ]
+          },
+          {
+            "type": "method_declaration",
+            "name": "processXmlFile",
+            "parameters": [
+              {
+                "type": "File",
+                "name": "xmlFile"
+              }
+            ],
+            "body": [
+              {
+                "type": "{"
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "sourceFileNameWithoutSuffix"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "method_invocation",
+                            "children": [
+                              {
+                                "type": "identifier",
+                                "text": "xmlFile"
+                              },
+                              {
+                                "type": "."
+                              },
+                              {
+                                "type": "identifier",
+                                "text": "getName"
+                              },
+                              {
+                                "type": "argument_list",
+                                "text": "()"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "substring"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "(0, xmlFile.getName().lastIndexOf(\".\"))"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "if_statement",
+                "children": [
+                  {
+                    "type": "if"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            logger.info(\"File already processed: {}\", xmlFile.getName());\n            backupXMLFile(xmlFile);\n            return;\n        }"
+                  }
+                ]
+              },
+              {
+                "type": "try_statement",
+                "children": [
+                  {
+                    "type": "try"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            // 解析XML文档\n            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();\n            DocumentBuilder db = dbf.newDocumentBuilder();\n            Document doc = db.parse(xmlFile);\n\n            List<BoVulnerability> vulnerabilities = new ArrayList<>();\n            List<BoVulnerabilityCve> cves = new ArrayList<>();\n            List<BoVulnerabilityProduct> products = new ArrayList<>();\n\n            // 解析XML文档中的漏洞信息\n            NodeList vulnerabilitiesNodeList = doc.getElementsByTagName(\"vulnerability\");\n\n            for (int i = 0; i < vulnerabilitiesNodeList.getLength(); i++) {\n                Element vulnerability = (Element) vulnerabilitiesNodeList.item(i);\n\n                // 提取漏洞基本信息\n                String number = getStringFromXmlElement(vulnerability, \"number\");\n                String title = getStringFromXmlElement(vulnerability, \"title\");\n                String serverity = getStringFromXmlElement(vulnerability, \"serverity\");\n                String isEvent = getStringFromXmlElement(vulnerability, \"isEvent\");\n                String submitTime = getStringFromXmlElement(vulnerability, \"submitTime\");\n                String openTime = getStringFromXmlElement(vulnerability, \"openTime\");\n                String referenceLink = getStringFromXmlElement(vulnerability, \"referenceLink\");\n                String formalWay = getStringFromXmlElement(vulnerability, \"formalWay\");\n                String description = getStringFromXmlElement(vulnerability, \"description\");\n                String patchName = getStringFromXmlElement(vulnerability, \"patchName\");\n                String patchDescription = getStringFromXmlElement(vulnerability, \"patchDescription\");\n\n                // 赋值BoVulnerability\n                BoVulnerability boVulnerability = new BoVulnerability();\n                boVulnerability.setFileName(sourceFileNameWithoutSuffix);\n                boVulnerability.setNumber(number);\n                boVulnerability.setTitle(title);\n                boVulnerability.setServerity(serverity);\n                boVulnerability.setIsEvent(isEvent);\n                boVulnerability.setSubmitTime(submitTime);\n                boVulnerability.setOpenTime(openTime);\n                boVulnerability.setReferenceLink(referenceLink);\n                boVulnerability.setFormalWay(formalWay);\n                boVulnerability.setDescription(description);\n                boVulnerability.setPatchName(patchName);\n                boVulnerability.setPatchDescription(patchDescription);\n\n                vulnerabilities.add(boVulnerability);\n\n                // 提取CVE关联信息\n                NodeList cvesNodeList = vulnerability.getElementsByTagName(\"cve\");\n                for (int j = 0; j < cvesNodeList.getLength(); j++) {\n                    Element cve = (Element) cvesNodeList.item(j);\n                    String cveNumber = getStringFromXmlElement(cve, \"cveNumber\");\n                    String cveUrl = getStringFromXmlElement(cve, \"cveUrl\");\n\n                    BoVulnerabilityCve boVulnerabilityCve = new BoVulnerabilityCve();\n                    boVulnerabilityCve.setFileName(sourceFileNameWithoutSuffix);\n                    boVulnerabilityCve.setCnvdNumber(number);\n                    boVulnerabilityCve.setCveNumber(cveNumber);\n                    boVulnerabilityCve.setCveUrl(cveUrl);\n                    cves.add(boVulnerabilityCve);\n                }\n\n                // 提取受影响的产品信息\n                NodeList productsNodeList = vulnerability.getElementsByTagName(\"product\");\n                for (int k = 0; k < productsNodeList.getLength(); k++) {\n                    Element product = (Element) productsNodeList.item(k);\n                    String name = product.getTextContent();\n\n                    BoVulnerabilityProduct boVulnerabilityProduct = new BoVulnerabilityProduct();\n                    boVulnerabilityProduct.setFileName(sourceFileNameWithoutSuffix);\n                    boVulnerabilityProduct.setCnvdNumber(number);\n                    boVulnerabilityProduct.setProduct(name);\n                    products.add(boVulnerabilityProduct);\n                }\n            }\n\n            if (vulnerabilities.isEmpty()) {\n                logger.warn(\"No vulnerabilities found in file: {}\", xmlFile.getName());\n                backupXMLFileForException(xmlFile);\n                return;\n            }\n\n            // 使用VulnerabilityService保存数据\n            vulnerabilityService.saveVulnerabilityData(sourceFileNameWithoutSuffix, vulnerabilities, cves, products);\n\n            // 生成预警信息\n            VulnerabilityAlertBrief alertBrief = new VulnerabilityAlertBrief();\n            alertBrief.setReportingCycle(sourceFileNameWithoutSuffix);\n\n            List<VulnerabilityAlert> alertList = new ArrayList<>();\n            List<BoComponent> components = componentService.readComponentsFromExcel();\n\n            for (BoComponent component : components) {\n                List<String> filterNames = componentService.readComponentFilterNameList(component.getComponentName());\n                for (String filterName : filterNames) {\n                    // 使用VulnerabilityService查询产品列表\n                    List<BoVulnerabilityProduct> boVulnerabilityProductList2 = vulnerabilityService.readVulnerabilityProducts(sourceFileNameWithoutSuffix, filterName);\n\n                    //vulnerabilityService.printBoVulnerabilityProductList(sourceFileNameWithoutSuffix, boVulnerabilityProductList2);\n\n                    for (BoVulnerabilityProduct boVulnerabilityProduct : boVulnerabilityProductList2) {\n                        BoVulnerability boVulnerability =\n                                vulnerabilityService.readVulnerability(sourceFileNameWithoutSuffix, boVulnerabilityProduct.getCnvdNumber());\n\n                        VulnerabilityAlert vulnerabilityAlert = new VulnerabilityAlert();\n                        vulnerabilityAlert.setSourceFileNameWithoutSuffix(sourceFileNameWithoutSuffix);\n                        vulnerabilityAlert.setTitle(boVulnerability.getTitle());\n                        alertBrief.appendComponent(component.getComponentName());\n                        vulnerabilityAlert.setComponent(component.getComponentName());\n                        vulnerabilityAlert.setCnvdNumber(boVulnerability.getNumber());\n                        vulnerabilityAlert.setCveNumber(vulnerabilityService.vulnerabilityCveJoin(cves, boVulnerability.getNumber()));\n                        vulnerabilityAlert.setDescription(boVulnerability.getDescription());\n                        vulnerabilityAlert.setSeverity(boVulnerability.getServerity());\n                        vulnerabilityAlert.setOpenTime(boVulnerability.getOpenTime());\n                        vulnerabilityAlert.setAffectedVersion(boVulnerabilityProduct.getProduct());\n                        vulnerabilityAlert.setRemediationAdvice(boVulnerability.getFormalWay());\n\n                        alertList.add(vulnerabilityAlert);\n                    }\n                }\n            }\n\n            alertList = vulnerabilityService.eliminateDuplicate(alertList);\n\n            if (!alertList.isEmpty()) {\n                logger.info(\"Start Process Notification Email ...\");\n                long startTime = System.currentTimeMillis();\n                NotificationEmailProcessor.process(alertBrief, alertList);\n                logger.info(String.format(\"Process Notification Email successfully: %.2f seconds\", (System.currentTimeMillis() - startTime) / 1000.0));\n            }\n\n            logger.info(\"File processed successfully: {}\", xmlFile.getName());\n\n            markFileStatus(sourceFileNameWithoutSuffix, \"PROCESSED\");\n            backupXMLFile(xmlFile);\n\n        }"
+                  },
+                  {
+                    "type": "catch_clause",
+                    "children": [
+                      {
+                        "type": "catch"
+                      },
+                      {
+                        "type": "("
+                      },
+                      {
+                        "type": "catch_formal_parameter",
+                        "children": [
+                          {
+                            "type": "catch_type",
+                            "children": [
+                              {
+                                "type": "type_identifier"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "e"
+                          }
+                        ]
+                      },
+                      {
+                        "type": ")"
+                      },
+                      {
+                        "type": "block",
+                        "text": "{\n            logger.error(\"Error processing file: {}\", xmlFile.getName(), e);\n            markFileStatus(sourceFileNameWithoutSuffix, \"FAILED\");\n            backupXMLFileForException(xmlFile);\n        }"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "}"
+              }
+            ]
+          },
+          {
+            "type": "method_declaration",
+            "name": "backupXMLFileForException",
+            "parameters": [
+              {
+                "type": "File",
+                "name": "xmlFile"
+              }
+            ],
+            "body": [
+              {
+                "type": "{"
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "sourceDirectory"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "xmlFile"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "getParent"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "sourceFileName"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "xmlFile"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "getName"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "sourcePath"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "xmlFile"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "getAbsolutePath"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "backupDirectory"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "binary_expression",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "sourceDirectory"
+                          },
+                          {
+                            "type": "+"
+                          },
+                          {
+                            "type": "string_literal",
+                            "text": "\"/backup_for_exception\"",
+                            "children": [
+                              {
+                                "type": "\""
+                              },
+                              {
+                                "type": "string_fragment"
+                              },
+                              {
+                                "type": "\""
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "createDirectory"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(backupDirectory)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "backupPath"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "binary_expression",
+                        "children": [
+                          {
+                            "type": "binary_expression",
+                            "children": [
+                              {
+                                "type": "identifier",
+                                "text": "backupDirectory"
+                              },
+                              {
+                                "type": "+"
+                              },
+                              {
+                                "type": "string_literal",
+                                "text": "\"/\"",
+                                "children": [
+                                  {
+                                    "type": "\""
+                                  },
+                                  {
+                                    "type": "string_fragment"
+                                  },
+                                  {
+                                    "type": "\""
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "+"
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "sourceFileName"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "if_statement",
+                "children": [
+                  {
+                    "type": "if"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            Files.move(Path.of(sourcePath), Path.of(backupPath));\n            logger.info(\"Backup file for exception successfully: {}\", sourceFileName);\n        }"
+                  }
+                ]
+              },
+              {
+                "type": "}"
+              }
+            ]
+          },
+          {
+            "type": "method_declaration",
+            "name": "backupXMLFile",
+            "parameters": [
+              {
+                "type": "File",
+                "name": "xmlFile"
+              }
+            ],
+            "body": [
+              {
+                "type": "{"
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "logger"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "info"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(\"Start Backup XML File: {} ...\", xmlFile.getName())"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "integral_type",
+                    "children": [
+                      {
+                        "type": "long"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "backupStartTime"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "System"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "currentTimeMillis"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "sourceDirectory"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "xmlFile"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "getParent"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "sourceFileName"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "xmlFile"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "getName"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "sourcePath"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "xmlFile"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "getAbsolutePath"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "backupDirectory"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "binary_expression",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "sourceDirectory"
+                          },
+                          {
+                            "type": "+"
+                          },
+                          {
+                            "type": "string_literal",
+                            "text": "\"/backup\"",
+                            "children": [
+                              {
+                                "type": "\""
+                              },
+                              {
+                                "type": "string_fragment"
+                              },
+                              {
+                                "type": "\""
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "createDirectory"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(backupDirectory)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "backupPath"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "binary_expression",
+                        "children": [
+                          {
+                            "type": "binary_expression",
+                            "children": [
+                              {
+                                "type": "identifier",
+                                "text": "backupDirectory"
+                              },
+                              {
+                                "type": "+"
+                              },
+                              {
+                                "type": "string_literal",
+                                "text": "\"/\"",
+                                "children": [
+                                  {
+                                    "type": "\""
+                                  },
+                                  {
+                                    "type": "string_fragment"
+                                  },
+                                  {
+                                    "type": "\""
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "+"
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "sourceFileName"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "try_statement",
+                "children": [
+                  {
+                    "type": "try"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            if (Files.exists(Path.of(sourcePath))) {\n                Files.move(Path.of(sourcePath), Path.of(backupPath));\n                logger.info(\"Backup XML file successfully: {}\", sourceFileName);\n            }\n        }"
+                  },
+                  {
+                    "type": "catch_clause",
+                    "children": [
+                      {
+                        "type": "catch"
+                      },
+                      {
+                        "type": "("
+                      },
+                      {
+                        "type": "catch_formal_parameter",
+                        "children": [
+                          {
+                            "type": "catch_type",
+                            "children": [
+                              {
+                                "type": "type_identifier"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "e"
+                          }
+                        ]
+                      },
+                      {
+                        "type": ")"
+                      },
+                      {
+                        "type": "block",
+                        "text": "{\n            logger.error(\"Backup XML file failed: {}\", sourceFileName, e);\n            return;\n        }"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "integral_type",
+                    "children": [
+                      {
+                        "type": "long"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "backupEndTime"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "method_invocation",
+                        "children": [
+                          {
+                            "type": "identifier",
+                            "text": "System"
+                          },
+                          {
+                            "type": "."
+                          },
+                          {
+                            "type": "identifier",
+                            "text": "currentTimeMillis"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "()"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "expression_statement",
+                "children": [
+                  {
+                    "type": "method_invocation",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "logger"
+                      },
+                      {
+                        "type": "."
+                      },
+                      {
+                        "type": "identifier",
+                        "text": "info"
+                      },
+                      {
+                        "type": "argument_list",
+                        "text": "(\"Backup file execution time: {} seconds\", (backupEndTime - backupStartTime) / 1000.0)"
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "}"
+              }
+            ]
+          },
+          {
+            "type": "method_declaration",
+            "name": "createDirectory",
+            "parameters": [
+              {
+                "type": "String",
+                "name": "directory"
+              }
+            ],
+            "body": [
+              {
+                "type": "{"
+              },
+              {
+                "type": "local_variable_declaration",
+                "children": [
+                  {
+                    "type": "type_identifier"
+                  },
+                  {
+                    "type": "variable_declarator",
+                    "children": [
+                      {
+                        "type": "identifier",
+                        "text": "file"
+                      },
+                      {
+                        "type": "="
+                      },
+                      {
+                        "type": "object_creation_expression",
+                        "children": [
+                          {
+                            "type": "new"
+                          },
+                          {
+                            "type": "type_identifier"
+                          },
+                          {
+                            "type": "argument_list",
+                            "text": "(directory)"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": ";"
+                  }
+                ]
+              },
+              {
+                "type": "if_statement",
+                "children": [
+                  {
+                    "type": "if"
+                  },
+                  {
+                    "type": "block",
+                    "text": "{\n            file.mkdirs();\n        }"
+                  }
+                ]
+              },
+              {
+                "type": "}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
